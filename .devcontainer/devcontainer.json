@@ -1,0 +1,20 @@
+{
+  "name": "Arandu",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13-bookworm",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "containerEnv": { "UV_LINK_MODE": "copy" },
+  "postCreateCommand": "pip install --upgrade uv && uv sync && uv run pytest -q",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": ".venv/bin/python"
+      }
+    }
+  }
+}
